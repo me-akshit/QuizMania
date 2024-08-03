@@ -1,0 +1,206 @@
+
+
+.container{
+    width: 70vw;
+    max-width: 600px;
+    min-height: 420px;
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: hsl(216, 50%, 16%);
+    border-radius: 30px;
+    overflow: hidden;
+    user-select: none;
+    
+    
+    
+}
+
+
+.left{
+    box-sizing: content-box;
+    color: white;
+    width: 50%;
+    background: linear-gradient(180deg, rgb(57, 163, 201) 0%, rgb(26, 124, 143,0.7) 100%);
+    background-color: rgb(46,43,233);
+    border-top-right-radius: 30px;
+    border-bottom-right-radius: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 3rem;
+    
+}
+
+.scoreTopText{
+    margin-bottom: 2.5rem;
+    
+}
+
+.scoreBg{
+    width: 150px;
+    height: 150px;
+    background: linear-gradient(170deg,rgb(38, 64, 69,0.6) 0%,rgb(0,0,0,0.26) 25%, hsla(241, 72%, 46%, 0) 100%);
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+}
+
+.userScore{
+    font-size: 4rem;
+    font-weight: 600;
+    opacity: 0.9;
+    padding-left: 3px;
+}
+
+.totalQuesElem{
+    font-size: 1.1rem;
+    opacity: 0.4;
+}
+
+.compliment{
+    margin-top: 2rem;
+}
+
+.scoreComment{
+    font-weight: 400;
+    margin-top: 0.5rem;
+    font-size: 1.1rem;
+    opacity: 0.7;
+}
+
+.right{
+    width: 50%;
+    background-color: hsl(216, 50%, 16%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-block: 3rem 1.5rem;
+    gap: 1.5rem;
+    padding-inline: 1.5rem;
+    
+}
+
+.saveScore , .playAgain{
+    padding: 1rem;
+    border: 2px solid hsl(215, 42%, 34%);
+    border-radius: 15px;
+    background-color: transparent;
+    color: white;
+}
+
+.saveScore:hover , .playAgain:hover{
+    background-color: rgb(53, 166, 214);
+}
+
+.playerName{
+    max-width: 70%;
+    word-break: break-word;
+    overflow-wrap: break-word;
+}
+
+.highScoreSection{
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    gap: 0.8rem;
+}
+
+.highScoreSection>span{
+    align-self: center;
+    color: rgb(57, 163, 201);
+    font-family: "Merienda", cursive;
+    font-weight: 700;
+    font-size: 1.4rem;
+}
+
+.highScorers{
+    padding-inline: 1.5rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    color: white;
+    padding-block: 0.8rem;
+    background-color: hsl(215, 42%, 34%);
+    border-radius: 10px;
+    
+}
+
+.userQuestionsElement{
+    opacity: 0.6;
+}
+
+
+@media(max-width:700px){
+    .container{
+        width: 95vw;
+    }
+
+    .right{
+        padding-inline: 0.75rem;
+    }
+
+    .highScorers{
+        padding-inline: 0.75rem;
+    }
+
+    .topScoreElement{
+        white-space: nowrap;
+    }
+
+    
+}
+
+@media(max-width:450px){
+    body{
+        display: flex;
+        align-items: flex-start;
+    }
+
+    .container{
+        flex-direction: column;
+        width: 100%;
+        position: static;
+        transform: none;
+        border-radius: 0;
+        background-color: hsl(217, 54%, 11%)
+        
+    }
+
+    .left{
+        width: 100%;
+        border-radius: 0;
+        border-bottom-left-radius: 30px;
+        border-bottom-right-radius: 30px;
+        padding: 0;
+        padding-block: 1.75rem;
+    }
+
+    .right{
+        width: 100%;
+        border-radius: 0;
+        background-color: hsl(217, 54%, 11%);
+        padding-inline: 1.5rem;
+    }
+
+    .highScoreSection{
+        margin-top: 0.5rem;
+        gap: 1rem;
+    }
+
+    .highScorers{
+        padding-block: 1rem;
+    }
+
+
+    
+
+
+}
+

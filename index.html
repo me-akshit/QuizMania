@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>QuizMania</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="scoreCard.css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <!-- logo -->
+    
+<!-- user Input form  -->
+    <div class="userInput">
+      <div class="UserName">
+        <span>Name</span>
+        <input type="text" id="name" required aria-autocomplete="none" autocomplete="off"/>
+      </div>
+
+      <div class="category">
+        <span>Category</span>
+        <div class="categoryOpt" data-value="" id="anyCategory">Any Category</div>
+        <div class="categoryOpt" data-value="9" id="generalKnowledge">General Knowledge</div>
+        <div class="categoryOpt" data-value="21">Sports</div>
+        <div class="categoryOpt" data-value="18">Computers</div>
+        <div class="categoryOpt" data-value="23">History</div>
+        <div class="categoryOpt" data-value="11">Movies</div>
+      </div>
+
+      <div class="questionNum">
+        <span>Questions</span>
+        <div class="numOption" data-value="10">10</div>
+        <div class="numOption" data-value="20">20</div>
+        <div class="numOption" data-value="30">30</div>
+      </div>
+
+      <button class="start">Start</button>
+    </div>
+
+    <!-- Quiz section  -->
+    <div class="quizSection">
+      <div class="question">
+        <div class="qLogo">Q</div>
+        <div class="questionText">
+          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Blanditiis,
+          eum! Nihil aliquam sint consequuntur modi saepe quidem natus itaque
+          assumenda.
+        </div>
+        <svg class="timer" width="60" height="60">
+          <circle cx="30" cy="30" r="30"></circle>
+        </svg>
+        <span class="countdown">30</span>
+      </div>
+
+      <div class="options-div">
+        <div class="options" data-value="0">Lorem40</div>
+        <div class="options" data-value="1">option 2</div>
+        <div class="options" data-value="2">option 3</div>
+        <div class="options" data-value="3">option 4</div>
+      </div>
+
+      <button class="next">Next</button>
+
+      <!-- progress bar -->
+     <div class="progressBar">
+      <div class="progress" ></div>
+      <div>
+        <span class="questionLabel">Question <span class="currentQuestionLabel">1 </span><span>/ </span><span class="totalQuestionLabel">20</span></span>
+      </div>
+     </div>
+
+    </div>
+
+    
+
+
+
+
+    <!-- Score Card section -->
+    <div class="container">
+      <div class="left">
+
+        <h2 class="scoreTopText">Your score</h2>
+        <div class="scoreBg">
+          <span class="userScore"></span>
+          <span class="totalQuesElem">of <span class="totalQues"></span></span>
+        </div>
+        <h1 class="compliment">Great</h1>
+        <span class="scoreComment">Better luck next time</span>
+
+      </div>
+
+      <div class="right">
+
+        <button class="saveScore">Save Score</button>
+        <button class="playAgain">Play Again</button>
+
+        <div class="highScoreSection">
+
+          <span>High Scores</span>
+          <div class="highScorers">
+
+            <span class="playerName">Akshit</span>
+            <div class="topScoreElement">
+              <span class="topScore">17 </span>
+              <span class="userQuestionsElement">/ <span class="userQuestions">20</span></span>
+            </div>
+          </div>
+
+          <div class="highScorers">
+
+            <span class="playerName">Niggesh</span>
+            <div class="topScoreElement">
+              <span class="topScore">2 </span>
+              <span class="userQuestionsElement">/ <span class="userQuestions">10<span></span>
+            </div>
+          </div>
+
+          <div class="highScorers">
+
+            <span class="playerName">Mamu</span>
+            <div class="topScoreElement">
+
+              <span class="topScore">8 </span>
+              <span class="userQuestionsElement">/ <span class="userQuestions">30</span></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- loader  -->
+
+    <div class="loader">
+
+    </div>
+  </body>
+</html>

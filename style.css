@@ -1,0 +1,466 @@
+@import url('https://fonts.googleapis.com/css2?family=Playwrite+AR&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    font-size: 16px;
+}
+
+body{
+    background-color: hsl(217, 54%, 11%);
+    min-height: 100vh;
+    min-height: 100dvh;
+}
+
+
+button{
+    outline: none;
+    border: none;
+}
+
+
+/* user Input Form */
+
+.userInput{
+    box-sizing: content-box;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    gap: 4vh;
+    padding-inline: 1.5rem 1.5rem;
+    background-color: hsl(216, 50%, 16%);
+    border-radius: 30px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50% ,-50%);
+    padding-block: 1.5rem 1rem;
+    user-select: none;
+
+}
+
+.userInput>div{
+    display: flex;
+    align-items: center;
+    gap: 0.8vw;
+}
+
+.userInput .category{
+    display: grid;
+    grid-template-columns: 50% 50%;
+}
+
+.userInput .category>span{
+    align-self: center;
+    justify-self: center;
+    grid-column: 1/span 2;
+    margin: 0;
+    margin-bottom: 10px;
+    
+}
+
+.userInput>div span{
+    font-size: 1.2rem;
+    margin-right: 1.5rem;
+   
+}
+
+#name{
+    padding-left: 0.5rem;
+    font-size: 1rem ;
+    background-color: hsla(215, 43%, 66%, 0.4); 
+    color: white;
+    border: none;
+    height: 2.5rem;
+    border-radius: 0.7rem;
+    flex:0.25;
+    
+
+}
+
+
+
+
+.numOption, .categoryOpt{
+    border: 1px solid hsl(215, 51%, 70%);
+    padding: 1rem 1.5rem;
+    border-radius: 10px;
+    user-select: none;
+    white-space: nowrap;
+}
+
+.numOption:hover, .categoryOpt:hover{
+    background-color: hsl(178, 91%, 43%);
+    box-shadow: 0 0 20px rgba(10, 209, 203, 0.8);
+    
+}
+
+
+
+input:focus{
+    outline:none
+}
+
+.start{
+    padding: 1rem 3rem;
+    font-size: 1.2rem;
+    background-color: hsla(215, 52%, 36%, 0.35);
+    color: rgba(255, 255, 255, 0.7);
+    outline: none;
+    border: none;
+    border-radius: 30px;
+    align-self: center;
+    
+}
+
+
+
+/* media Queries of user form */
+
+@media (max-width:940px){
+    .userInput{
+        display: grid;
+    }
+
+    .userInput .category{
+        display: grid;
+        grid-template-columns: 50% 50%;
+        row-gap: 1.2vh;
+        column-gap: 1.1vw;
+    }
+
+    .userInput .category>span{
+        align-self: center;
+        justify-self: center;
+        grid-column: 1/span 2;
+        margin: 0;
+        margin-bottom: 10px;
+        
+    }
+
+    .category> div{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50px;
+
+        
+    }
+    .userInput .questionNum{
+        gap: 1.2vw;
+    }
+
+    .numOption{
+        padding: 1rem ;
+        border-radius: 30px;
+    }
+
+    .start{
+        justify-self: center;
+    }
+}
+
+@media(max-width:400px){
+    .userInput{
+        padding-inline: 0.5rem 0.5rem;
+        width: 90%;
+    }
+
+    .userInput .UserName{
+        margin-left: 0.5rem;
+    }
+
+    .userInput .category{
+        width: 100%;
+        
+    }
+
+    .userInput .questionNum{
+        margin-left: 0.5rem;
+
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* Quiz Section */
+
+.quizSection{
+    display: none;
+    flex-direction: column;
+    width: 50vw;
+    color: white;
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    translate: -50% -50%;
+    padding-left: 20px;
+    gap: 2rem;
+    user-select: none;
+    transition: opacity 0.3s;
+}
+
+.quizSection.hide{
+    opacity: 0;
+}
+
+
+.question{
+    box-sizing: content-box;
+    background-color: hsl(216, 50%, 16%);
+    padding-block: 1.8rem;
+    padding-inline: 6rem 2rem;
+    border-radius: 70px;
+    font-size: 1.4rem;
+    justify-self: center;
+    position: relative;
+
+}
+
+
+.qLogo{
+    background-color: hsl(178, 91%, 43%);
+    font-family: "Playwrite AR", cursive;
+    font-size: 1.8rem;
+    width: 5rem;
+    position: absolute;
+    top: 0rem;
+    bottom: 0rem;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 70px;
+    border-top-right-radius: 30%;
+    border-bottom-right-radius: 30%;
+    padding-left: 5px;
+            
+}
+
+
+
+.options-div{
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    align-self: stretch;
+    font-size: 1.2rem;
+
+   
+}
+
+.options-div .options{
+    text-align: center;
+    background-color: hsl(216, 50%, 16%);
+    padding: 1.2rem 2rem;
+    border-radius: 20px;
+    transition: background-color 0.15s;
+}
+
+.next{
+    box-sizing: content-box;
+    background-color: hsla(215, 52%, 36%, 0.35);
+    color: rgba(255, 255, 255, 0.7);
+    align-self: flex-end;
+    margin-right: 2rem;
+    padding: 1.1rem 1.65rem;
+    border-radius: 30px;
+    font-size: 1.1rem;
+}
+
+.buttonBackground{
+    background-color: hsl(178, 91%, 43%);
+    box-shadow: 0 0 20px rgba(10, 209, 203, 0.8);
+    color: white;
+    
+}
+
+
+@media(max-width:1100px){
+    .quizSection{
+        width: 70vw;
+    }
+}
+
+@media (max-width:660px){
+    .quizSection{
+        width: 90vw;
+    }
+}
+
+@media(max-width:500px){
+    .quizSection{
+        width: 95vw;
+    }
+
+    .question{
+        font-size: 1.25rem;
+        padding-block: 1rem;
+        padding-inline: 5rem 1.75rem;
+    }
+
+    .qLogo{
+        width: 4rem;
+        font-size: 1.4rem;
+    }
+
+    .options-div{
+        font-size: 1.15rem;
+    }
+
+
+}
+
+@media (max-width:400px){
+    .quizSection{
+        width: 95vw;
+    }
+
+    .question{
+        font-size: 1.15rem;
+        padding-block: 1rem;
+        padding-inline: 4rem 1.75rem;
+    }
+
+    .qLogo{
+        width: 3rem;
+        font-size: 1.4rem;
+    }
+
+    .options-div{
+        font-size: 1.1rem;
+    }
+}
+
+
+/* progress bar */
+
+.progressBar{
+    width: 95%;
+    height: 6px;
+    background-color: #ccc;
+    border-radius: 5px;
+    position: absolute;
+    top: -22%;
+}
+
+.progress{
+    height: 100%;
+    width: 0%;
+    background-color: hsl(178, 91%, 43%);
+    transition: 0.2s;
+    border-radius: 5px;
+}
+
+.questionLabel{
+    color: white;
+    font-size: 1rem;
+    position: absolute;
+    bottom: 200%;
+}
+
+
+
+
+
+
+/* timer  */
+
+.timer{
+    position: absolute;
+    top: -48px;
+    left: 50%;
+    transform: translateX(-50%);
+    fill: hsl(216, 50%, 16%);
+    z-index: -1;
+    transition: 0.3s;
+    
+
+
+}
+
+.countdown{
+    position: absolute;
+    top: -31px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: hsla(178, 91%, 61%, 0.953);
+    text-shadow: 0px 0px 1px hsla(178, 91%, 61%, 0.953), 0 0 2px rgba(255, 255, 255, 0.463);
+    transition: color 0.3s, text-shadow 0.3s;
+    font-size: 1.4rem;
+}
+
+.pulse{
+    animation: pulse 1s ease-out infinite ;
+}
+
+
+.yellow{
+    color: hsl(39, 79%, 56%);
+    text-shadow:
+    0 0 5px rgba(255, 176, 31, 0.6),
+    0 0 5px rgba(255, 176, 31, 0.4);
+}
+
+.red{
+    color: rgba(224, 71, 71, 0.913);
+    text-shadow:
+    0 0 3px rgba(227, 91, 91, 0.6),
+    0 0 3px rgba(232, 103, 103, 0.4),
+    0 0 3px rgba(232, 103, 103, 0.2);
+}
+
+@keyframes pulse{
+    0%,100% {
+        transform: translateX(-50%) scale(1) ;
+    }
+
+    50%{
+        transform: translateX(-50%) scale(1.1) ;
+    }
+
+    75%{
+        transform: translateX(-50%) scale(0.9);
+    }
+}
+
+/* Loader */
+
+.loader{
+    position: absolute;
+    display: none;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 0.7rem;
+    border: 0.3rem solid white;
+    border-top: 0.3rem solid rgb(57, 163, 201);
+    border-radius: 50%;
+    animation: loaderAnimation 1.5s ease-in-out infinite ;
+    user-select: none;
+}
+
+@keyframes loaderAnimation{
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100%{
+        transform: rotate(360deg);
+    }
+}
+
+   
