@@ -55,6 +55,16 @@ button{
     grid-template-columns: 50% 50%;
 }
 
+.category{
+    margin-right: 10px;
+}
+
+.category>div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .userInput .category>span{
     align-self: center;
     justify-self: center;
@@ -89,10 +99,11 @@ button{
 .numOption, .categoryOpt{
     border: 1px solid hsl(215, 51%, 70%);
     padding: 1rem 1.5rem;
-    border-radius: 10px;
+    border-radius: 15px;
     user-select: none;
     white-space: nowrap;
 }
+
 
 .numOption:hover, .categoryOpt:hover{
     background-color: hsl(178, 91%, 43%);
@@ -144,11 +155,7 @@ input:focus{
     }
 
     .category> div{
-        display: flex;
-        align-items: center;
-        justify-content: center;
         border-radius: 50px;
-
         
     }
     .userInput .questionNum{
@@ -479,11 +486,11 @@ input:focus{
 
 @keyframes loaderAnimation{
     0% {
-        transform: rotate(0deg);
+        transform:translate(-50%, -50%) rotate(0deg);
     }
 
     100%{
-        transform: rotate(360deg);
+        transform:translate(-50%, -50%) rotate(360deg);
     }
 }
 
